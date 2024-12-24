@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
 
 
 def create_and_save_plot(data, ticker, period, filename=None):
@@ -27,5 +28,13 @@ def create_and_save_plot(data, ticker, period, filename=None):
     if filename is None:
         filename = f"{ticker}_{period}_stock_price_chart.png"
 
-    plt.savefig(filename)
-    print(f"График сохранен как {filename}")
+    # создаем директорию для хранения построенных графиков
+    folder_path = "images/charts/"
+    # проверка на наличие директории
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        plt.savefig(folder_path + filename)
+    else:
+        plt.savefig(folder_path + filename)
+
+    print(f"График сохранен как {folder_path + filename}")

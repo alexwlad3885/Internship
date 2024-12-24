@@ -21,8 +21,15 @@ def main():
 
     # Plot the data
     dplt.create_and_save_plot(stock_data, ticker, period)
+
+    # Average closing price of shares
     average_price = dd.calculate_and_display_average_price(stock_data)
     print(f'Cредняя цена закрытия акций {ticker} за период {period} : {average_price}')
+
+    threshold = input("Задайте процент колебания цены акций: ")
+    threshold_mes = dd.notify_if_strong_functionals(stock_data, threshold)
+    if None != threshold_mes:
+        print(f'Цена акций  {ticker} за период {period} колебалась более чем на {threshold} ({threshold_mes})')
 
 
 if __name__ == "__main__":
