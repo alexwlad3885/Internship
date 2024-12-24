@@ -27,17 +27,27 @@
     - **calculate_and_display_average_price(data):**
         - функция вычисляет среднее арифметическое по колоннке 'Close' DataFrame за период.
         - выводит среднюю цену закрытия акций за заданный период.
+        - ![скриншот](images/screenshot/calculate_and_display_average_price.png)
+    - **notify_if_strong_functionals(data, threshold):**
+        - функция вычисляет максимальную цену актива за один день (истинный диапазон true range),
+        - усредняет полученные значения на заданном периоде (средний истинный диапазон average true range).
+        - сравнивает ATR с заданным порогом threshold
+        - если ATR превышает threshold, пользователь получает уведомление
+        - ![скриншот](images/screenshot/notify_if_strong_functionals.png)
 2. **main.py:**
     - **main():**
         - основная функция, управляющая процессом загрузки, обработки данных и их визуализации.
         - запрашивает у пользователя ввод данных.
         - вызывает функции загрузки и обработки данных.
         - передаёт результаты на визуализацию.
+        - ![скриншот](images/screenshot/task_1_1_2.png)
 3. **data_plotting.py:**
     - **create_and_save_plot(data, ticker, period, filename):**
         - создаёт график, отображающий цены закрытия и скользящие средние.
+        - ![график](images/charts/AAPL_3mo_stock_price_chart.png)
         - предоставляет возможность сохранения графика в файл.
         - параметр filename опционален; если он не указан, имя файла генерируется автоматически.
+        - ![скриншот](images/screenshot/folder_path.png)
 ***
 ## Пошаговое использование
 1. Запустите main.py.
